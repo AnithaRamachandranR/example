@@ -25,5 +25,7 @@ node{
     sh "pwd"
     sh 'airflow webserver -p 8080 & airflow scheduler && fg'
 }
+    }
+    }
    
 }  
