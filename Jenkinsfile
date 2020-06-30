@@ -11,12 +11,12 @@ node{
    }
    stage('Deploy to Tomcat'){
       sshagent(['tom']) {
-      sh 'scp -o StrictHostKeyChecking=no target/*.war  ec2-user@52.90.68.233:/home/ec2-user/tomcat7/webapps/'
+      sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_example/target/*.war  ec2-user@52.90.68.233:/home/ec2-user/tomcat7/webapps/'
       }
   }
    stage('Deploy to airflow'){
     sshagent(['tom']) {
-    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/anithapip/*.py  ec2-user@52.90.68.233:/home/ec2-user/airflow/dags/'
+    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_example/*.py  ec2-user@52.90.68.233:/home/ec2-user/airflow/dags/'
 
      }
     sh 'pwd'
