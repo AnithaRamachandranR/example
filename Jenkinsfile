@@ -22,8 +22,8 @@ node{
     sh 'pwd'
     sh 'whoami'
     dir("/home/ec2-user/airflow/") {
-    pwd
-    airflow webserver -p 8080 & airflow scheduler && fg
+    sh 'pwd'
+    sh 'airflow webserver -p 8080 & airflow scheduler && fg'
 }
     }
     }
