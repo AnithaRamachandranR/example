@@ -14,14 +14,16 @@ node{
       sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_example/target/*.war  ec2-user@52.90.68.233:/home/ec2-user/tomcat7/webapps/'
       }
   }
-   stage('Deploy to airflow'){
+   
+    stage('Deploy to airflow'){
     sshagent(['tom']) {
+    sh 'whoami'
     sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_example/*.py  ec2-user@52.90.68.233:/home/ec2-user/airflow/dags/'
-
-    dir('ec2-user@52.90.68.233:/home/ec2-user/airflow'){
-       sh 'airflow webserver -p 8080 & airflow scheduler && fg '
-    }
-    }
-    }
+    sh 'pwd'
+    sh 'whoami'
+    dir("/home/ec2-user/airflow/") {
+    sh "pwd"
+    sh 'airflow webserver -p 8080 & airflow scheduler && fg'
+}
    
 }  
