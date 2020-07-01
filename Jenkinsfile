@@ -11,7 +11,7 @@ node{
    }
    stage('Deploy to Tomcat'){
       sshagent(['tom']) {
-      sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_anitha/target/*.war  ec2-user@35.153.159.232:/home/ec2-user/tomcat/webapps/'
+      sh 'scp -o StrictHostKeyChecking=no target/*.war  ec2-user@35.153.159.232:/home/ec2-user/tomcat/webapps/'
       }
   }
    
