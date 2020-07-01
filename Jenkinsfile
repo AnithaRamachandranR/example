@@ -4,7 +4,7 @@ node{
     sh 'whoami'
     sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_anitha/*.py  ec2-user@35.153.159.232:/home/ec2-user/airflow/dags/'
     }
-   sh 'ssh -i /home/ec2-user/anithakey.pem  ec2-user@35.153.159.232 StrictHostKeyChecking=no'
+   sh 'sudo ssh -i /home/ec2-user/anithakey.pem  ec2-user@35.153.159.232 StrictHostKeyChecking=no'
         
        sh 'pwd'
    
