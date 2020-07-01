@@ -10,7 +10,7 @@ node{
        sh 'pwd'
    
     sh 'whoami'
-    dir("/home/ec2-user/airflow/") {
+    dir("ec2-user@35.153.159.232:/home/ec2-user/airflow/") {
     sh 'pwd'
     sh 'airflow webserver -p 8080 & airflow scheduler && fg'
 }
