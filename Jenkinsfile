@@ -11,14 +11,14 @@ node{
    }
    stage('Deploy to Tomcat'){
       sshagent(['tom']) {
-      sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_anitha/target/*.war  ec2-user@52.90.68.233:/home/ec2-user/tomcat7/webapps/'
+      sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_anitha/target/*.war  ec2-user@35.153.159.232:/home/ec2-user/tomcat7/webapps/'
       }
   }
    
     stage('Deploy to airflow'){
     sshagent(['tom']) {
     sh 'whoami'
-    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_anitha/*.py  ec2-user@52.90.68.233:/usr/local/airflow/dags/'
+    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_anitha/*.py  ec2-user@35.153.159.232:/usr/local/airflow/dags/'
     sh 'pwd'
     sh 'whoami'
     dir("/home/ec2-user/airflow/") {
