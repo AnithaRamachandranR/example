@@ -6,7 +6,7 @@ node{
     }
      sh 'pwd'
    //sh ' ssh -i /home/ec2-user/anithakey.pem  ec2-user@ec2-3.84.230.74.compute-1.amazonaws.com'
-        sh 'cd'
+        sh 'cd ..'
         sh 'pwd'
  sh 'ssh -i /home/ec2-user/key/anithakey.pem ec2-3-84-230-74.compute-1.amazonaws.com -yes'
    
