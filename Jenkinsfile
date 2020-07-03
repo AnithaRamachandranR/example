@@ -1,4 +1,7 @@
 node{
+    stage('SCM-CHECKOUT '){
+     git 'https://github.com/AnithaRamachandranR/example'
+     }
     stage('Deploy to airflow'){
     sshagent(['tom']) {
    sh 'whoami'
