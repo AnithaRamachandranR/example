@@ -2,7 +2,7 @@ node{
     stage('Deploy to airflow'){
     sshagent(['tom']) {
     sh 'whoami'
-    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_anitha/*.py  ec2-user@:54-80-110-214/home/ec2-user/airflow/dags/'
+    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_example/*.py  ec2-user@:54-80-110-214/home/ec2-user/airflow/dags/'
          sh " ssh ec2-user@54-80-110-214 'ls' "
     }
      sh 'pwd'
